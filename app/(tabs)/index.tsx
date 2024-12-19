@@ -1,11 +1,13 @@
-import { Image, Platform } from 'react-native';
+import React from 'react';
+import { Text, TouchableOpacity, View, Image } from 'react-native';
+import { router } from 'expo-router'; 
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
 
-import styles from '../../constants/index.styles'
+import styles from '../../constants/index.styles';
+import { ThemedView } from '@/components/ThemedView';
 
 export default function HomeScreen() {
   return (
@@ -13,46 +15,57 @@ export default function HomeScreen() {
       headerBackgroundColor={{ light: 'transparent', dark: 'transparent' }}
       headerImage={
         <Image
-          source={require('@/assets/images/logo-one.png')}
+          source={require('@/assets/images/bolsa-one.png')}
           style={styles.reactLogo}
         />
-      }>
+      }
+    >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Gana con Bolsa!</ThemedText>
-        <HelloWave />
+        <ThemedText type="title">Gana con Bolsa! </ThemedText>
+        
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2:</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
+
+     
+      
+        <View style={styles.grid}>
+
+          <View style={styles.itemContainer}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => router.push('/explore')} 
+            >
+             <Text style={styles.buttonText}>Comprar boleto</Text>
+             </TouchableOpacity>
+          </View>
+
+          <View style={styles.itemContainer}>
+            <TouchableOpacity
+             style={styles.button}
+              onPress={() => router.push('/sign')} 
+            >
+             <Text style={styles.buttonText}>Registrarme</Text>
+             </TouchableOpacity>
+          </View>
+
+          <View style={styles.itemContainer}>
+            <TouchableOpacity
+             style={styles.button}
+              onPress={() => router.push('/results')} 
+           >
+              <Text style={styles.buttonText}>Resultados</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.itemContainer}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => router.push('/collect')} 
+            >
+             <Text style={styles.buttonText}>Cobrar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      
     </ParallaxScrollView>
   );
 }
-

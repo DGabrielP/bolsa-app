@@ -4,7 +4,7 @@
  */
 
 //aqui aplico el background general
-import { LinearGradient } from 'expo-linear-gradient';
+import { GradientBackground } from "@/components/ui/GradientBackground";
 
 
 const tintColorLight = '#0a7ea4';
@@ -13,20 +13,20 @@ const tintColorDark = '#fff';
 export const Colors = {
   light: {
     text: '#11181C',
-    backgroundStart: 'rgb(0, 0, 255)', // Azul eléctrico
-    backgroundEnd: 'rgb(255, 255, 255)', // Blanco
-    tint: '#2f95dc',
+    background: '#53aafa',
+    tint: tintColorLight,
     icon: '#687076',
     tabIconDefault: '#687076',
-    tabIconSelected: '#2f95dc',
+    tabIconSelected: tintColorLight,
+   
   },
   dark: {
-    text: '#ffffff',
-    backgroundStart: 'rgb(0, 0, 255)',
-    backgroundEnd: 'rgb(255, 255, 255)',
-    tint: '#fff',
-    icon: '#ccc',
-    tabIconDefault: '#ccc',
-    tabIconSelected: '#fff',
+    text: '#ECEDEE',
+    background: '#151718',
+    tint: tintColorDark,
+    icon: '#9BA1A6',
+    tabIconDefault: '#9BA1A6',
+    tabIconSelected: tintColorDark,
+   
   },
 };

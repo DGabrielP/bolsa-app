@@ -12,6 +12,7 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
+    
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
@@ -36,10 +37,39 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'empezar',
+          title: 'comprar',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="sign"
+        options={{
+          title: 'registrarme',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="results"
+        options={{
+          title: 'resultados',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="collect"
+        options={{
+          title: 'cobrar',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="buy"
+        options={{
+          title: 'pagar',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+        }}
+      />
+      
     </Tabs>
   );
 }
